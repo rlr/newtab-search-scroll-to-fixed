@@ -31,7 +31,7 @@ export class Base extends React.PureComponent {
     return (<div className="outer-wrapper">
       <main>
         <Search />
-        <TopSites rows={2} />
+        <TopSites rows={1} />
         <div className="sections-list">
           <Pocket rows={2} />
           <Highlights />
