@@ -14,8 +14,8 @@
   width: 100%;
 
   input {
-    background: var(--newtab-textbox-background-color) url("../data/content/assets/google.ico") $search-icon-padding center / $search-icon-size no-repeat;
-    background-size: 24px;
+    background: var(--newtab-textbox-background-color) url("../data/content/assets/google.ico") $search-icon-padding center no-repeat;
+    background-size: $search-icon-size;
     border: solid 1px var(--newtab-search-border-color);
     box-shadow: $shadow-secondary, 0 0 0 1px $black-15;
     font-size: 15px;
@@ -183,11 +183,11 @@
     $search-icon-width: 2 * $search-icon-padding + $search-icon-size;
     $search-button-width: 35px;
 
-    background: var(--newtab-textbox-background-color) url("../data/content/assets/google.ico") $search-icon-padding center / $search-icon-size no-repeat;
     height: $search-height;
 
     input {
-      background-size: 16px;
+      background: var(--newtab-textbox-background-color) url("../data/content/assets/google.ico") $search-icon-padding center no-repeat;
+      background-size: $search-icon-size;
     }
   }
 }
