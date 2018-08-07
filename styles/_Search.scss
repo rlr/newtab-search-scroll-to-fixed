@@ -204,3 +204,15 @@
 
   padding: 34px 0 64px;
 }
+
+@media (max-height: 700px) {
+  .non-collapsible-section {
+    padding: 0 0 30px;
+  }
+
+  .fixed-search {
+    main {
+      padding-top: 78px;
+    }
+  }
+}
