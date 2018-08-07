@@ -11,11 +11,12 @@ export class Base extends React.PureComponent {
     this.searchFixed = false;
   }
   componentDidMount() {
+    const SCROLL_THRESHOLD = 34;
     window.addEventListener('scroll', function(e) {
-      if (window.scrollY > 30 && !this.searchFixed) {
+      if (window.scrollY > SCROLL_THRESHOLD && !this.searchFixed) {
         document.body.className = "fixed-search";
         this.searchFixed = true;
-      } else if (window.scrollY <= 30 && this.searchFixed) {
+      } else if (window.scrollY <= SCROLL_THRESHOLD && this.searchFixed) {
         document.body.className = "";
         this.searchFixed = false;
       }
