@@ -1,0 +1,121 @@
+@import './normalize';
+@import './variables';
+@import './icons';
+@import './theme';
+
+$os-infopanel-arrow-height: 10px;
+$os-infopanel-arrow-offset-end: 7px;
+$os-infopanel-arrow-width: 18px;
+$os-search-focus-shadow-radius: 3px;
+@import './Search';
+@import './TopSites';
+@import './CollapsibleSection';
+@import './Sections';
+@import './Card';
+@import './Topics';
+
+html,
+body,
+main {
+  height: 100%;
+}
+
+body {
+  background-color: var(--newtab-background-color);
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Ubuntu', 'Helvetica Neue', sans-serif;
+  font-size: 16px;
+  overflow-y: scroll;
+}
+
+h1,
+h2 {
+  font-weight: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+.outer-wrapper {
+  color: var(--newtab-text-primary-color);
+  display: flex;
+  flex-grow: 1;
+  min-height: 100vh;
+  padding: ($section-spacing + $section-vertical-padding) $base-gutter $base-gutter;
+
+  &.fixed-to-top {
+    display: block;
+  }
+}
+
+a {
+  color: var(--newtab-link-primary-color);
+}
+
+main {
+  margin: auto;
+  // Offset the snippets container so things at the bottom of the page are still
+  // visible when snippets / onboarding are visible. Adjust for other spacing.
+  padding-bottom: $snippets-container-height - $section-spacing - $base-gutter;
+  width: $wrapper-default-width;
+
+  @media (min-width: $break-point-small) {
+    width: $wrapper-max-width-small;
+  }
+
+  @media (min-width: $break-point-medium) {
+    width: $wrapper-max-width-medium;
+  }
+
+  @media (min-width: $break-point-large) {
+    width: $wrapper-max-width-large;
+  }
+
+  @media (min-width: $break-point-widest) {
+    width: $wrapper-max-width-widest;
+  }
+
+  section {
+    margin-bottom: $section-spacing;
+    position: relative;
+  }
+
+  .hide-main & {
+    visibility: hidden;
+  }
+}
+
+.non-collapsible-section {
+  padding: 0 $section-horizontal-padding;
+}
+
+body {
+  --newtab-search-icon: url("../data/content/assets/google.ico");
+}
+
+input {
+  &[type='text'],
+  &[type='search'] {
+    border-radius: $border-radius;
+  }
+}
+
+
+.youtube {
+  background-image: url("../data/content/tippytop/images/youtube-com@2x.png");
+}
+.facebook {
+  background-image: url("../data/content/tippytop/images/facebook-com@2x.png");
+}
+.amazon {
+  background-image: url("../data/content/tippytop/images/amazon@2x.png");
+}
+.reddit {
+  background-image: url("../data/content/tippytop/images/reddit-com@2x.png");
+}
+.wikipedia {
+  background-image: url("../data/content/tippytop/images/wikipedia-org@2x.png");
+}
+.twitter {
+  background-image: url("../data/content/tippytop/images/twitter-com@2x.png");
+}
