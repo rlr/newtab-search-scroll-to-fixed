@@ -1,7 +1,7 @@
 .search-wrapper {
   $search-height: 48px;
-  $search-icon-size: 18px;
-  $search-icon-padding: 15px;
+  $search-icon-size: 24px;
+  $search-icon-padding: 12px;
   $search-icon-width: 2 * $search-icon-padding + $search-icon-size;
   $search-button-width: 48px;
   $glyph-forward: url('chrome://browser/skin/forward.svg');
@@ -178,11 +178,12 @@
 
   .search-wrapper {
     $search-height: 35px;
-    $search-icon-size: 18px;
-    $search-icon-padding: 15px;
+    $search-icon-size: 16px;
+    $search-icon-padding: 12px;
     $search-icon-width: 2 * $search-icon-padding + $search-icon-size;
     $search-button-width: 35px;
 
+    background: var(--newtab-textbox-background-color) url("../data/content/assets/google.ico") $search-icon-padding center / $search-icon-size no-repeat;
     height: $search-height;
 
     input {
