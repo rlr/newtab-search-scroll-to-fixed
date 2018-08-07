@@ -2,7 +2,7 @@
   $search-height: 48px;
   $search-icon-size: 24px;
   $search-icon-padding: 12px;
-  $search-icon-width: 2 * $search-icon-padding + $search-icon-size;
+  $search-icon-width: 2 * $search-icon-padding + $search-icon-size - 2;
   $search-button-width: 48px;
   $glyph-forward: url('chrome://browser/skin/forward.svg');
 
