@@ -8,6 +8,18 @@ import {Highlights} from "./Highlights";
 export class Base extends React.PureComponent {
   constructor(props) {
     super(props);
+    this.searchFixed = false;
+  }
+  componentDidMount() {
+    window.addEventListener('scroll', function(e) {
+      if (window.scrollY > 0 && !this.searchFixed) {
+        document.body.className = "fixed-search";
+        this.searchFixed = true;
+      } else if (window.scrollY === 0 && this.searchFixed) {
+        document.body.className = "";
+        this.searchFixed = false;
+      }
+    });
   }
   render() {
     return (<div className="outer-wrapper">

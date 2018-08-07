@@ -157,3 +157,35 @@
     margin-bottom: -3px;
   }
 }
+
+.fixed-search {
+
+
+  .non-collapsible-section {
+    background-color: #aaa;
+
+  }
+}
+
+main {
+  padding-top: 68px;
+}
+
+.search-wrapper {
+  width: 992px;
+  margin: 0 auto;
+}
+
+.non-collapsible-section {
+  background-color: var(--newtab-background-color);
+  transition-property: background-color;
+  transition-duration: 0.5s;
+
+  position: fixed;
+  left: 0;
+  top: 0;
+  padding: 30px 0 15px;
+  height: 93px;
+  width: 100%;
+  z-index: 10;
+}

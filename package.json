@@ -1,7 +1,7 @@
 {
-  "name": "newtab-grid-experiments",
+  "name": "newtab-search-scroll-to-fixed",
   "version": "1.0.0",
-  "description": "Experimental stuff related to the layout grid on the Firefox newtab page.",
+  "description": "Playing around with making the search bar scroll into a fixed position.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
