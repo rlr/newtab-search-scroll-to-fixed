@@ -14,7 +14,7 @@
   width: 100%;
 
   input {
-    background: var(--newtab-textbox-background-color) var(--newtab-search-icon) $search-icon-padding center / $search-icon-size no-repeat;
+    background: var(--newtab-textbox-background-color) url("../data/content/assets/google.ico") $search-icon-padding center / $search-icon-size no-repeat;
     border: solid 1px var(--newtab-search-border-color);
     box-shadow: $shadow-secondary, 0 0 0 1px $black-15;
     font-size: 15px;
@@ -159,33 +159,42 @@
 }
 
 .fixed-search {
-
-
   .non-collapsible-section {
-    background-color: #aaa;
+    background-color: $grey-10-95;
+    position: fixed;
+    left: 0;
+    top: 0;
+    padding: 30px 0 15px;
+    height: 93px;
+    width: 100%;
+    z-index: 10;
+    border-bottom: solid 1px var(--newtab-border-secondary-color);
+  }
 
+  main {
+    padding-top: 134px;
+  }
+
+  .search-wrapper {
+    $search-height: 35px;
+    $search-icon-size: 18px;
+    $search-icon-padding: 15px;
+    $search-icon-width: 2 * $search-icon-padding + $search-icon-size;
+    $search-button-width: 35px;
+
+    height: $search-height;
   }
 }
 
-main {
-  padding-top: 68px;
-}
-
 .search-wrapper {
-  width: 992px;
+  width: 736px;
   margin: 0 auto;
 }
 
 .non-collapsible-section {
-  background-color: var(--newtab-background-color);
+  background-color: $grey-10;
   transition-property: background-color;
   transition-duration: 0.5s;
 
-  position: fixed;
-  left: 0;
-  top: 0;
-  padding: 30px 0 15px;
-  height: 93px;
-  width: 100%;
-  z-index: 10;
+  padding: 34px 0 64px;
 }
