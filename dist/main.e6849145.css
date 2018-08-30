@@ -433,7 +433,7 @@ body {
   .top-sites-list:not(.dnd-active) .top-site-outer:-moz-any(.active, :focus, :hover) .context-menu-button {
     opacity: 1;
     transform: scale(1);
-    transition-delay: 500ms; }
+    transition-delay: 333ms; }
 
 .top-site-outer {
   padding: 0 16px;
@@ -1033,7 +1033,7 @@ body {
     .card-outer:-moz-any(:hover, :focus, .active):not(.placeholder) .context-menu-button {
       opacity: 1;
       transform: scale(1);
-      transition-delay: 500ms; }
+      transition-delay: 333ms; }
     .card-outer:-moz-any(:hover, :focus, .active):not(.placeholder) .card-title {
       color: var(--newtab-link-primary-color); }
     .card-outer:-moz-any(:hover, :focus, .active):not(.placeholder) .alternate ~ .card-host-name {
