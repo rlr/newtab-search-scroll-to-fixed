@@ -130,10 +130,16 @@ const TopSite = props => <li className={`top-site-outer${props.url ? "" : " plac
     <a href={props.url}>
       <div className="tile">
         <div className="top-site-icon rich-icon" style={{"backgroundImage": `url(${props.image})`}}></div>
+        {props.label === "amazon" &&
+          <div class="top-site-icon search-topsite"></div>
+        }
       </div>
       <div className="title">
         <span>{props.label}</span>
       </div>
     </a>
+    <div>
+      <button class="context-menu-button icon"></button>
+    </div>
   </div>
 </li>;

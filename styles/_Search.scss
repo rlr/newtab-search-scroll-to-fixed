@@ -2,16 +2,63 @@
   $search-height: 48px;
   $search-icon-size: 24px;
   $search-icon-padding: 12px;
-  $search-icon-width: 2 * $search-icon-padding + $search-icon-size - 2;
+  $search-icon-width: 2 * $search-icon-padding + $search-icon-size -2;
   $search-button-width: 48px;
   $glyph-forward: url('chrome://browser/skin/forward.svg');
 
-  cursor: default;
-  display: flex;
-  height: $search-height;
-  margin-bottom: $section-spacing;
-  position: relative;
-  width: 100%;
+  padding: 34px 0 64px;
+
+  @media (max-height: 700px) {
+    & {
+      padding: 0 0 30px;
+    }
+  }
+
+  .logo-and-wordmark {
+    align-items: center;
+    display: flex;
+    font-size: 96px;
+    justify-content: center;
+    margin-bottom: 40px;
+    margin-top: -20px;
+
+    .logo {
+      background: url('chrome://branding/content/icon128.png') no-repeat center center;
+      background-size: 128px;
+      height: 128px;
+      width: 128px;
+    }
+
+    .wordmark {
+      background: url('#{$image-path}firefox-wordmark.svg') no-repeat center center;
+      background-size: 200px;
+      -moz-context-properties: fill;
+      fill: var(--newtab-text-primary-color);
+      height: 128px;
+      width: 260px;
+    }
+  }
+
+  .search-inner-wrapper {
+    cursor: default;
+    display: flex;
+    height: $search-height;
+    margin: 0 auto;
+    position: relative;
+    width: $searchbar-width-smallest;
+
+    @media (min-width: $break-point-small) {
+      width: $searchbar-width-small;
+    }
+
+    @media (min-width: $break-point-medium) {
+      width: $searchbar-width-medium;
+    }
+
+    @media (min-width: $break-point-large) {
+      width: $searchbar-width-large;
+    }
+  }
 
   input {
     background: var(--newtab-textbox-background-color) url("../data/content/assets/google.ico") $search-icon-padding center no-repeat;
@@ -35,7 +82,7 @@
     box-shadow: $shadow-secondary, 0 0 0 1px $black-25;
   }
 
-  &:active input,
+  .search-inner-wrapper:active input,
   input:focus {
     border: $input-border-active;
     box-shadow: var(--newtab-textbox-focus-boxshadow);
@@ -65,6 +112,44 @@
 
     &:dir(rtl) {
       transform: scaleX(-1);
+    }
+  }
+}
+
+@media (min-height: 701px) {
+  .fixed-search {
+    main {
+      padding-top: 146px;
+    }
+
+    .search-wrapper {
+      $search-header-bar-height: 95px;
+      $search-height: 35px;
+      $search-icon-size: 16px;
+      $search-icon-padding: 16px;
+
+      background-color: var(--newtab-search-header-background-color);
+      border-bottom: solid 1px var(--newtab-border-secondary-color);
+      height: $search-header-bar-height;
+      left: 0;
+      padding: 30px 0;
+      position: fixed;
+      top: 0;
+      width: 100%;
+      z-index: 9;
+
+      .search-inner-wrapper {
+        height: $search-height;
+      }
+
+      input {
+        background-position-x: $search-icon-padding;
+        background-size: $search-icon-size;
+
+        &:dir(rtl) {
+          background-position-x: right $search-icon-padding;
+        }
+      }
     }
   }
 }
@@ -155,64 +240,5 @@
   .contentSearchSuggestionRow > td > .historyIcon {
     margin-inline-start: 7px;
     margin-inline-end: 15px;
-    margin-bottom: -3px;
-  }
-}
-
-.fixed-search {
-  .non-collapsible-section {
-    background-color: $grey-10-95;
-    position: fixed;
-    left: 0;
-    top: 0;
-    padding: 30px 0 15px;
-    height: 95px;
-    width: 100%;
-    z-index: 10;
-    border-bottom: solid 1px var(--newtab-border-secondary-color);
-  }
-
-  main {
-    padding-top: 146px;
-  }
-
-  .search-wrapper {
-    $search-height: 35px;
-    $search-icon-size: 16px;
-    $search-icon-padding: 16px;
-    $search-icon-width: 2 * $search-icon-padding + $search-icon-size;
-    $search-button-width: 35px;
-
-    height: $search-height;
-
-    input {
-      background: var(--newtab-textbox-background-color) url("../data/content/assets/google.ico") $search-icon-padding center no-repeat;
-      background-size: $search-icon-size;
-    }
-  }
-}
-
-.search-wrapper {
-  width: 736px;
-  margin: 0 auto;
-}
-
-.non-collapsible-section {
-  background-color: $grey-10;
-  transition-property: background-color;
-  transition-duration: 0.5s;
-
-  padding: 34px 0 64px;
-}
-
-@media (max-height: 700px) {
-  .non-collapsible-section {
-    padding: 0 0 30px;
-  }
-
-  .fixed-search {
-    main {
-      padding-top: 78px;
-    }
   }
 }
